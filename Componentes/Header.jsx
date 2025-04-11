@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons'; // Asegúrate de tener instalada esta librería
+import { View, Text, StyleSheet, Image } from 'react-native';
 
 const Header = () => {
     return (
@@ -13,10 +12,6 @@ const Header = () => {
             <Text style={styles.title}>
                 Universidad Tecnológica{'\n'}de la Sierra Hidalguense
             </Text>
-
-            <TouchableOpacity style={styles.menuButton} onPress={() => alert('Menú abierto')}>
-                <Icon name="menu" size={30} color="#fff" />
-            </TouchableOpacity>
         </View>
     );
 };
@@ -27,7 +22,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         backgroundColor: '#084c02',
         flexDirection: 'row',
-        alignItems: 'center',
+        alignItems: 'center', // Alineación vertical correcta
         justifyContent: 'space-between',
         shadowColor: '#000',
         shadowOpacity: 0.2,
@@ -36,16 +31,18 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     title: {
-        fontSize: 18,
+        fontSize: 22,
         fontWeight: 'bold',
         color: '#fff',
         textAlign: 'center',
-        flex: 1, // Permite que el texto se expanda proporcionalmente
+        paddingBlockStart: 20, // Espacio adicional para que no se vea pegado arriba
+        flex: 1,
     },
     imagen: {
-        width: 50,
-        height: 50,
+        width: 80,  
+        height: 80,
         resizeMode: 'contain',
+        marginTop: 15, // Ajuste preciso para alinear con el texto
     },
     menuButton: {
         padding: 5,
